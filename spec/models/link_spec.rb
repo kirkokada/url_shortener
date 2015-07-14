@@ -26,4 +26,23 @@ RSpec.describe Link, type: :model do
       expect(link.slug).to_not be_nil
     end
   end
+
+  describe "when slug is not unique" do
+    before do
+      other_link = Link.create(url: "http://yahoo.com")
+      link.slug = other_link.slug
+    end
+
+    it { should_not be_valid }
+  end
+
+  describe "when slugs differ by only 1 character" do
+    before do
+      other_link = Link.create(url: "http://yahoo.com")
+      link.slug = other_link.slug
+      link.slug[-1] = link.slug[-1] == 'A' ? 'B' : 'A'
+    end
+
+    it { should_not be_valid }
+  end
 end

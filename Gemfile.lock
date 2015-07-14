@@ -67,8 +67,6 @@ GEM
       activesupport (>= 3.0.0)
     ffi (1.9.8)
     formatador (0.2.5)
-    friendly_id (5.1.0)
-      activerecord (>= 4.0.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     guard (2.12.5)
@@ -220,7 +218,6 @@ DEPENDENCIES
   capybara
   coffee-rails (~> 4.1.0)
   factory_girl
-  friendly_id
   guard-rspec
   jbuilder (~> 2.0)
   jquery-rails
