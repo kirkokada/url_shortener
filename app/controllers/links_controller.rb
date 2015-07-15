@@ -19,7 +19,7 @@ class LinksController < ApplicationController
   def redirect
     @link = Link.find_by_slug(slug_param)
     if !@link.nil?
-     redirect_to @link.url
+      redirect_to @link.url
     else
       redirect_to root_path
     end
@@ -32,6 +32,6 @@ class LinksController < ApplicationController
   end
 
   def slug_param
-    params[:slug].gsub(/[IO]/, "I" => "l", "O" => "0")
+    params[:slug].gsub(/[IO]/, 'I' => 'l', 'O' => '0')
   end
 end

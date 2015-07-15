@@ -1,6 +1,6 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
-    <h2><%= @link.url %></h2>
-    <h3><%= @link.slug %></h3>
+    <h3>URL: <%= @link.url %></h3>
+    <h3>Short: <%= request.protocol + request.host + '/' + @link.slug %></h3>
   </div>
 </div>

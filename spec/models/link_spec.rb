@@ -8,17 +8,6 @@ RSpec.describe Link, type: :model do
   it { should respond_to :url }
   it { should respond_to :slug }
 
-  describe "when the URL is not unique" do
-    before do
-      dup = link.dup
-      dup.save
-    end
-
-    it "should not be valid" do
-      expect(link).to_not be_valid
-    end
-  end
-
   describe "when the URL doesn't contain the protocol" do
     before do
       link.url = "www.google.com"
