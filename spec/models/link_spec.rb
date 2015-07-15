@@ -19,6 +19,17 @@ RSpec.describe Link, type: :model do
     end
   end
 
+  describe "when the URL doesn't contain the protocol" do
+    before do
+      link.url = "www.google.com"
+      link.save
+    end
+
+    it "should prepend the url with https protocol" do
+      expect(link.url).to eq "https://www.google.com"
+    end
+  end
+
   describe "after saving" do
     before { link.save }
 
